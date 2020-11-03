@@ -3,14 +3,26 @@
 
 
 # Read temps.txt and print it without the blank line at the end
-
+with open('temps.txt') as file_object:
+    content = file_object.read()
+print(content.rstrip())
+print('read')
 
 
 # Read temps.txt line by line and print with no whitespace
-
+with open('temps.txt') as file_object:
+    for line in file_object:
+        print(line.rstrip())
 
 
 # Make a list of lines from the file
+with open('temps.txt') as file_object:
+    line_list = file_object.readlines()
+
+list_length = len(line_list)
+for i in range(list_length):
+    line_list[i] = line_list[i].rstrip()
+print(line_list)
 
 
 
